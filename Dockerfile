@@ -14,6 +14,7 @@ RUN apk update && \
 # See: http://www.ookla.com/support/a26325856prise/
 RUN wget -q https://install.speedtest.net/ooklaserver/ooklaserver.sh
 RUN chmod a+x ooklaserver.sh
+RUN ls -l
 RUN ./ooklaserver.sh install -f
 
 USER speedtest
