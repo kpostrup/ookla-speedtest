@@ -16,6 +16,11 @@ RUN wget -q https://install.speedtest.net/ooklaserver/ooklaserver.sh
 RUN chmod a+x ooklaserver.sh
 RUN ./ooklaserver.sh install -f
 
+# Commented out by default, this setting allows you to limit access to your OoklaServer.
+# The default allows all domains, but remove the comment to only allow access from
+# Ookla.com, Speedtest.net, and any other domain added to the list.
+RUN echo "OoklaServer.allowedDomains = *.ookla.com, *.speedtest.net" > OoklaServer.properties
+
 USER speedtest
 
 CMD ./OoklaServer
