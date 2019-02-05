@@ -4,8 +4,8 @@ MAINTAINER Kenneth Østrup
 
 WORKDIR /opt/ookla
 
-RUN addgroup -S speedtest && \
-    adduser -S -G speedtest speedtest
+RUN groupadd -g 999 speedtest && \
+    useradd -r -u 999 -g speedtest speedtest
 
 RUN apk update && \
     apk add ca-certificates wget && \
