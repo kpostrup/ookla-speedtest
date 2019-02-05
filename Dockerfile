@@ -12,7 +12,7 @@ RUN apk update && \
     update-ca-certificates
 
 # See: http://www.ookla.com/support/a26325856prise/
-RUN wget http://install.speedtest.net/ooklaserver/ooklaserver.sh
+RUN wget -q https://install.speedtest.net/ooklaserver/ooklaserver.sh
 RUN chmod a+x ooklaserver.sh
 RUN ./ooklaserver.sh install -f
 
